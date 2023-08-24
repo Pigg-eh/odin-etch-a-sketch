@@ -1,9 +1,25 @@
+body {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
 div.container {
+    display: flex;
     background-color: #FFAAEE;
-    padding-top: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 1800px;
+    width: 1800px;
     
 }
 
-div.littleDiv{
+div>div{
+    flex: 1 0 auto;
     background-color: grey;
+    margin: 20px;
+    height: 400px;
+    width: 400px;
+    /* display: flex; */
 }

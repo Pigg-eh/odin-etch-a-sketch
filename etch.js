@@ -18,6 +18,7 @@ function insertDiv(){
     for (i=0; i<16; i++){
         makeDiv[i]= document.createElement('div')
         divContainer.appendChild(makeDiv[i])
+        
     }
 }
 

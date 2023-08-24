@@ -3,3 +3,7 @@ div.container {
     padding-top: 100%;
     
 }
+
+div.littleDiv{
+    background-color: grey;
+}

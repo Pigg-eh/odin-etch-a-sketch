@@ -6,20 +6,20 @@ body {
 
 div.container {
     display: flex;
-    background-color: #FFAAEE;
+    background-color: lightgray;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    height: 1800px;
-    width: 1800px;
+    height: 1300px;
+    width: 1300px;
     
 }
 
 div>div{
     flex: 1 0 auto;
     background-color: grey;
-    margin: 20px;
-    height: 400px;
-    width: 400px;
+    margin: 5px;
+    height: 67.5px;
+    width: 67.5px;
     /* display: flex; */
 }

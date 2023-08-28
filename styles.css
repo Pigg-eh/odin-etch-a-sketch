@@ -1,25 +1,38 @@
+*{
+    background-color: darkred;
+}
+
 body {
     display:flex;
     align-items: center;
     justify-content: center;
+    padding-top: 5%;
 }
 
 div.container {
     display: flex;
     background-color: lightgray;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    height: 1300px;
-    width: 1300px;
+    height: 1000px;
+    width: 1000px;
     
 }
 
-div>div{
+div.pixel{
     flex: 1 0 auto;
     background-color: grey;
-    margin: 5px;
-    height: 67.5px;
-    width: 67.5px;
-    /* display: flex; */
+    height: 62.5x;
+    width: 62.5px;
 }
+
+/* div.pixel {
+    flex: 1 0 auto;
+    background-color: grey;
+    height: auto;
+}
+
+div.pixel:before {
+    content: '';
+    display: block;
+    padding: 100%;
+} */

@@ -1,7 +1,3 @@
-// function applyStyles () {
-//     document.getElementsByClassName('littleDiv').style.color = 'blue'
-// }
-
 let squArray = []
 
 makeDiv()
@@ -10,6 +6,11 @@ function makeDiv (){
         squArray.push('div'+i)
     }
 }
+
+//doMathMultiply()
+//doMathDivision()
+
+
 
 insertDiv()
 function insertDiv() {
@@ -20,6 +21,7 @@ function insertDiv() {
     }
 } 
 
+//addResizeButton()
 
 addClass()
 function addClass() {
@@ -32,17 +34,18 @@ function addClass() {
 
 hoverOver()
 function hoverOver() {
-    const container = document.querySelector('div.container') //can delete later
     const pixels = document.querySelectorAll('div.pixel')
 
-    // container.addEventListener ('mouseover', (e) => {
-    //     e.target.style.background = 'pink';
-    // }) //bubbling version
 
     pixels.forEach((pixel) => {
         pixel.addEventListener ('mouseover',(e) => {
-            e.target.style.background = 'pink'; 
+            e.target.style.background = 'black'; 
         })
     })
 }
+
+
+
+//ResizeGrid()
+
     

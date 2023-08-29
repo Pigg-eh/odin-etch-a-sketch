@@ -1,5 +1,6 @@
 *{
     background-color: darkred;
+    
 }
 
 body {
@@ -7,6 +8,7 @@ body {
     align-items: center;
     justify-content: center;
     padding-top: 5%;
+    flex-direction: column;
 }
 
 div.container {
@@ -21,8 +23,17 @@ div.container {
 div.pixel{
     flex: 1 0 auto;
     background-color: grey;
-    height: 62.5x;
+    height: 62.5px;
     width: 62.5px;
+}
+
+div.slider{
+    flex:1 0 auto;
+    background-color: pink;
+    height: 32.5px;
+    width: 100%;
+    margin: 20px;
+    
 }
 
 /* div.pixel {

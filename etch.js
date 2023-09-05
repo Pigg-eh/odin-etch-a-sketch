@@ -8,6 +8,15 @@ function makeDiv (x=256){
     }
 }//number of squares
 
+insertDiv()
+function insertDiv(x=256) {
+    let divContainer= document.querySelector('div.container')
+    for (i=0; i<x; i++){
+        makeDiv[i]= document.createElement('div')
+        divContainer.appendChild(makeDiv[i])
+    }
+} 
+
 function sizeDiv (x){
     let squareSize = document.querySelector('div.pixel')
     squareSize.style.width = `${x}px`
@@ -57,14 +66,7 @@ function doMathDivide(x/*also passed from slider*/){
     
 }//size of individual divs (change div.pixel attribute)
 
-insertDiv()
-function insertDiv(x=256) {
-    let divContainer= document.querySelector('div.container')
-    for (i=0; i<x; i++){
-        makeDiv[i]= document.createElement('div')
-        divContainer.appendChild(makeDiv[i])
-    }
-} 
+
 
 addGridClass()
 function addGridClass() {

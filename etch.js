@@ -6,6 +6,12 @@ function makeDiv (x=256){
     for (i=0; i<x; i++){
         squArray.push('div'+i)
     }
+}//number of squares
+
+function sizeDiv (x){
+    let squareSize = document.querySelector('div.pixel')
+    squareSize.style.width = `${x}px`
+    squareSize.style.height = `${x}px`
 }
 
 createResizeSlider()
@@ -42,11 +48,13 @@ function displaySliderValue(value){
 }
 
 function doMathMultiply(x /*passed from slider */) {
-	return x**2
+	return ans = x**2
+   
 }// number of divs to make 
 
-function doMathDivision(x/*also passed from slider*/){
+function doMathDivide(x/*also passed from slider*/){
 	return 1000/x
+    
 }//size of individual divs (change div.pixel attribute)
 
 insertDiv()
@@ -69,17 +77,16 @@ function addGridClass() {
 
 resizeGrid()
 function resizeGrid() {
-    let sliderValue = document.querySelector('input')
+    let sliderValue = document.querySelector('input.slider')
 
     
-        sliderValue.addEventListener('range', (e) => {
-            gridSize = e.target.value
-        })
-    
-
-    displaySliderValue(gridSize)
+        sliderValue.addEventListener('change', (e) => {
+            gridSize = e.target.value;
+            displaySliderValue(gridSize)
+            doMathMultiply (gridSize)
+            doMathDivide (gridSize)
+        }) 
 }
-
 
 
 hoverOver()

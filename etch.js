@@ -1,4 +1,4 @@
-let squArray = []
+let squArray = [] //test commit
 let gridSize = 16
 
 makeDiv()

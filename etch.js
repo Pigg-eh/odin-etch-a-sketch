@@ -1,4 +1,4 @@
-let squArray = [] //test commit
+let squArray = [] 
 let gridSize = 16
 
 makeDiv()
@@ -23,6 +23,24 @@ function sizeDiv (x){
     squareSize.style.height = `${x}px`
 }
 
+function clearDiv (){ //remove div.pixel temporarily
+    squArray = []
+
+    let pixels = document.querySelectorAll('div.pixel')
+
+    pixels.forEach((pixel) => {
+        pixel.remove()
+    })
+
+
+}
+
+function doMaths (){ //immeadiately call the functions to add div agian
+    makeDiv(doMathMultiply)
+    insertDiv(doMathMultiply)
+    sizeDiv(doMathDivide)
+}
+
 createResizeSlider()
 function createResizeSlider() {
     let body = document.querySelector('body')
@@ -40,20 +58,27 @@ function createResizeSlider() {
     slider.classList.add('slider')
 }
 
-createSliderDisplay()
-function createSliderDisplay() {
+createResizeButton()
+function createResizeButton() {
     let container = document.querySelector('div.slideContainer')
-    let sliderDisplay = document.createElement('div')
+    let sliderDisplay = document.createElement('button')
     container.appendChild(sliderDisplay)
     sliderDisplay.classList.add('display') 
-    sliderDisplay.textContent = 'test'
 } 
 
 displaySliderValue (gridSize)
 function displaySliderValue(value){
-    //let currentValue = document.querySelector('input.slider')
-    let sliderDisplay = document.querySelector('div.display')
+    let sliderDisplay = document.querySelector('button.display')
     sliderDisplay.textContent = `Grid ${value}`
+}
+
+addClickListener()
+function addClickListener() {
+    let btn = document.querySelector('button.display')
+
+    btn.addEventListener('onclick', (e) => {
+        clearDiv()
+    })
 }
 
 function doMathMultiply(x /*passed from slider */) {

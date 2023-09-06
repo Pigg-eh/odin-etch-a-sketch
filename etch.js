@@ -49,7 +49,7 @@ function createSliderDisplay() {
     sliderDisplay.textContent = 'test'
 } 
 
-displaySliderValue ()
+displaySliderValue (gridSize)
 function displaySliderValue(value){
     //let currentValue = document.querySelector('input.slider')
     let sliderDisplay = document.querySelector('div.display')

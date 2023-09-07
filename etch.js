@@ -17,28 +17,30 @@ function insertDiv(x=256) {
     }
 } 
 
-function sizeDiv (x){
+function sizeDiv (x= 62.5){
     let squareSize = document.querySelector('div.pixel')
     squareSize.style.width = `${x}px`
     squareSize.style.height = `${x}px`
 }
 
 function clearDiv (){ //remove div.pixel temporarily
-    squArray = []
-
-    let pixels = document.querySelectorAll('div.pixel')
+    let pixels = document.querySelectorAll('.pixel')
 
     pixels.forEach((pixel) => {
-        pixel.remove()
+        pixel.remove();
     })
 
+    squArray = []
+
+    //doMaths(doMathMultiply, doMathDivide) functions returning null
 
 }
 
-function doMaths (){ //immeadiately call the functions to add div agian
-    makeDiv(doMathMultiply)
-    insertDiv(doMathMultiply)
-    sizeDiv(doMathDivide)
+function doMaths (product, quotient){ //immeadiately call the functions to add div agian
+
+    makeDiv(product)
+    insertDiv(product)
+    sizeDiv(quotient) //may be the issue
 }
 
 createResizeSlider()
@@ -76,14 +78,16 @@ addClickListener()
 function addClickListener() {
     let btn = document.querySelector('button.display')
 
-    btn.addEventListener('onclick', (e) => {
-        clearDiv()
+    btn.addEventListener('onclick', clearDiv())
+
+    btn.addEventListener ('click',  () => {   
+        clearDiv()   
     })
 }
 
 function doMathMultiply(x /*passed from slider */) {
-	return ans = x**2
-   
+	return x**2
+    
 }// number of divs to make 
 
 function doMathDivide(x/*also passed from slider*/){

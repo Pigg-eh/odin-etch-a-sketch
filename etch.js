@@ -1,6 +1,8 @@
 let squArray = [] 
-let product = (x) => x**2// number of divs to make 
-let quotient = (x)=> 1000/x   
+let product = x => x**2// number of divs to make 
+let quotient = x=> 1000/x  
+
+//check pixel.div it is not even changing the DOM
 //size of individual divs (change div.pixel attribute)
 //parameters passed from slider
 
@@ -35,7 +37,7 @@ function styleDiv (x= 62.5){
     let squaresSize = document.querySelectorAll('div.pixel')
    
     squaresSize.forEach((squareSize)=> {
-        squareSize.style.width = `${x}px`,
+        squareSize.style.width = `${x}px`
         squareSize.style.height = `${x}px`
         squareSize.style.color = 'grey'
     })

@@ -1,27 +1,46 @@
 let squArray = [] 
-let gridSize = 16
+let product = (x) => x**2// number of divs to make 
+let quotient = (x)=> 1000/x   
+//size of individual divs (change div.pixel attribute)
+//parameters passed from slider
 
-makeDiv()
-function makeDiv (x=256){
+makeDiv(256)
+function makeDiv (x){
     for (i=0; i<x; i++){
         squArray.push('div'+i)
     }
 }//number of squares
 
-insertDiv()
-function insertDiv(x=256) {
+insertDiv(256)
+function insertDiv(x) {
     let divContainer= document.querySelector('div.container')
     for (i=0; i<x; i++){
         makeDiv[i]= document.createElement('div')
         divContainer.appendChild(makeDiv[i])
     }
+    addGridClass()
 } 
 
-function sizeDiv (x= 62.5){
-    let squareSize = document.querySelector('div.pixel')
-    squareSize.style.width = `${x}px`
-    squareSize.style.height = `${x}px`
+
+function addGridClass() {
+    let pixels = document.querySelectorAll('div.container>div')
+
+    pixels.forEach((pixel) => {
+        pixel.classList.add('pixel')
+    })
 }
+
+styleDiv()
+function styleDiv (x= 62.5){
+    let squaresSize = document.querySelectorAll('div.pixel')
+   
+    squaresSize.forEach((squareSize)=> {
+        squareSize.style.width = `${x}px`,
+        squareSize.style.height = `${x}px`
+        squareSize.style.color = 'grey'
+    })
+} //on to something here
+
 
 function clearDiv (){ //remove div.pixel temporarily
     let pixels = document.querySelectorAll('.pixel')
@@ -32,15 +51,17 @@ function clearDiv (){ //remove div.pixel temporarily
 
     squArray = []
 
-    //doMaths(doMathMultiply, doMathDivide) functions returning null
+    doMaths(product, quotient) //functions returning null
 
 }
 
-function doMaths (product, quotient){ //immeadiately call the functions to add div agian
+
+
+function doMaths (product, quotient){ //immediately call the functions to add div again
 
     makeDiv(product)
     insertDiv(product)
-    sizeDiv(quotient) //may be the issue
+    styleDiv(quotient) //may be the issue
 }
 
 createResizeSlider()
@@ -53,7 +74,7 @@ function createResizeSlider() {
     slider.setAttribute('type', 'range')
     slider.setAttribute('min', '1')
     slider.setAttribute('max', '64')
-    slider.setAttribute('value', gridSize)
+    slider.setAttribute('value', 16)
 
 
     container.classList.add('slideContainer')
@@ -68,7 +89,7 @@ function createResizeButton() {
     sliderDisplay.classList.add('display') 
 } 
 
-displaySliderValue (gridSize)
+displaySliderValue (16)
 function displaySliderValue(value){
     let sliderDisplay = document.querySelector('button.display')
     sliderDisplay.textContent = `Grid ${value}`
@@ -78,33 +99,15 @@ addClickListener()
 function addClickListener() {
     let btn = document.querySelector('button.display')
 
-    btn.addEventListener('onclick', clearDiv())
 
     btn.addEventListener ('click',  () => {   
         clearDiv()   
     })
 }
 
-function doMathMultiply(x /*passed from slider */) {
-	return x**2
-    
-}// number of divs to make 
-
-function doMathDivide(x/*also passed from slider*/){
-	return 1000/x
-    
-}//size of individual divs (change div.pixel attribute)
 
 
 
-addGridClass()
-function addGridClass() {
-    let pixels = document.querySelectorAll('div.container>div')
-
-    pixels.forEach((pixel) => {
-        pixel.classList.add('pixel')
-    })
-}
 
 resizeGrid()
 function resizeGrid() {
@@ -112,10 +115,10 @@ function resizeGrid() {
 
     
         sliderValue.addEventListener('change', (e) => {
-            gridSize = e.target.value;
-            displaySliderValue(gridSize)
-            doMathMultiply (gridSize)
-            doMathDivide (gridSize)
+            let displayValue = e.target.value;
+            displaySliderValue(displayValue)
+            product (displayValue)
+            quotient (displayValue)
         }) 
 }
 

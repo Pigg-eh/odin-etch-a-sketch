@@ -23,8 +23,8 @@ div.container {
 div.pixel{
     flex: 1 0 auto;
     background-color: grey;
-    height: 62.5px;
-    width: 62.5px;
+    /* height: 62.5px;
+    width: 62.5px; */
 }
 
 div.slideContainer{

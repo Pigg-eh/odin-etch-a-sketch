@@ -118,17 +118,17 @@ function addClickListener() {
 
 
 resizeGrid(sliderValue)
-function resizeGrid() {
+function resizeGrid() { //check displaySliderValue func here
     let slidersValue = document.querySelector('input.slider')
 
     
         slidersValue.addEventListener('change', (e) => {
             sliderValue = e.target.value;
-            console.log(`HERESTUPIDsliderValue@resizeGrid(): ${sliderValue}`)
+            displaySliderValue(e.target.value)
         }) 
-        displaySliderValue(sliderValue)
+        console.log(`SLider Value before call: ${sliderValue}`)
+        
         findProduct (sliderValue)
-        console.log(`displayVal@resizeGrid(): ${sliderValue}`)
         findQuotient (sliderValue)
 }
 

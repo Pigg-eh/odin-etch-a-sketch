@@ -3,7 +3,6 @@ let sliderValue = 16
 let findProduct = (x) => x**2;// number of divs to make 
 let findQuotient = (x)=>1000/x;  
 
-console.log(findProduct(5))
 //function displaySliderValue() not changing the button
 
 
@@ -99,7 +98,6 @@ function displaySliderValue(value){
     let sliderDisplay = document.querySelector('button.display')
     
     sliderDisplay.textContent = `Grid ${value}`
-    console.log(`VALUEPARAM: ${value}`)
 }
 
 addClickListener()
@@ -109,13 +107,9 @@ function addClickListener() {
 
     btn.addEventListener ('click',  () => {   
         clearDiv(sliderValue) 
-          
+        hoverOver()
     })
 }
-
-
-
-
 
 resizeGrid(sliderValue)
 function resizeGrid() { //check displaySliderValue func here
@@ -126,8 +120,7 @@ function resizeGrid() { //check displaySliderValue func here
             sliderValue = e.target.value;
             displaySliderValue(e.target.value)
         }) 
-        console.log(`SLider Value before call: ${sliderValue}`)
-        
+                
         findProduct (sliderValue)
         findQuotient (sliderValue)
 }

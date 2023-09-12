@@ -3,15 +3,15 @@ let sliderValue = 16
 let findProduct = (x) => x**2;// number of divs to make 
 let findQuotient = (x)=>1000/x;  
 
-//function displaySliderValue() not changing the button
+
 
 
 makeDiv(256)
-function makeDiv (x){
+function makeDiv (x){ //number of squares
     for (i=0; i<x; i++){
         squArray.push('div'+i)
     }
-}//number of squares
+}
 
 insertDiv(256)
 function insertDiv(x) {
@@ -41,7 +41,7 @@ function styleDiv (x= 62.5){
         squareSize.style.height = `${x}px`
         squareSize.style.color = 'grey'
     })
-} //on to something here
+} 
 
 
 function clearDiv (){ //remove div.pixel temporarily
@@ -55,7 +55,7 @@ function clearDiv (){ //remove div.pixel temporarily
 
     squArray = []
 
-    doMaths(findProduct(sliderValue), findQuotient(sliderValue)) //functions returning NaN
+    doMaths(findProduct(sliderValue), findQuotient(sliderValue)) 
 
 }
 
@@ -112,7 +112,7 @@ function addClickListener() {
 }
 
 resizeGrid(sliderValue)
-function resizeGrid() { //check displaySliderValue func here
+function resizeGrid() { 
     let slidersValue = document.querySelector('input.slider')
 
     
